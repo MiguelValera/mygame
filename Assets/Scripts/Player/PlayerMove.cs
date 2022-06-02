@@ -51,7 +51,7 @@ public class PlayerMove : MonoBehaviour
         //<----------------Movement--------------------->
 
         //<----------------Jump--------------------->
-        if (Input.GetKey("space") || Input.GetKey("w") || Input.GetKey("up") && CheckGround.isGrounded)
+        if (Input.GetKey("space") && CheckGround.isGrounded)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpSpeed);
         }
@@ -98,4 +98,11 @@ public class PlayerMove : MonoBehaviour
     }
     //<-----------------Platforms logic--------------------->
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "FinalApple")
+        {
+            Timer.timeIsRunning = false;
+        }
+    }
 }

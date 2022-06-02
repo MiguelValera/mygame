@@ -21,8 +21,6 @@ public class FruitManager : MonoBehaviour
 
             transition.SetActive(true);
             Invoke("ChangeScene", 0.9f);
-            ManageServer.ServerManagement.callServerGetResults();
-            ManageServer.ServerManagement.callServerPostTime();
             
         }
     }

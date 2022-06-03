@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - FinalApple
+  - Fruits
   layers:
   - Default
   - TransparentFX

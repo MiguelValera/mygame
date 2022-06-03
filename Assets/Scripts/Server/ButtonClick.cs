@@ -13,7 +13,8 @@ public class ButtonClick : MonoBehaviour
     {
         canvas.SetActive(false);
         Destroy(headDoor);
-        string username = inputUsername.text.ToString();
+        string usernameBroken = inputUsername.text.ToString();
+        string username = usernameBroken.Substring(0, usernameBroken.Length-1);
         Debug.Log(username);
         ManageServer.ServerManagement.callServerPostTime(Timer.myTime.ToString(), username);
     }

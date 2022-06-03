@@ -24,11 +24,12 @@ public class ManageServer : MonoBehaviour
         public static async void callServerPostTime(string time, string username)
         {
             string usernameToSend = HttpUtility.HtmlEncode(username.ToString());
+            
             var url = "http://localhost:4030/upload";
             using var client = new HttpClient();
             var msg = new HttpRequestMessage(HttpMethod.Post, url);
             msg.Headers.Add("userName", usernameToSend);
-            msg.Headers.Add("time", "3");
+            msg.Headers.Add("time", time);
             await client.SendAsync(msg);
             
         }
